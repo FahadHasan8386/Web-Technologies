@@ -76,3 +76,9 @@ footer h5{
     padding: 8px;
     border-radius: 6px;
 }
+.user-box {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 12px;
+}
