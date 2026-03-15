@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form</title>
+</head>
+<body>
+
+<h3>User Form</h3>
+
+<form onsubmit="addData(); return false;">
+    
+    Name:
+    <input type="text" id="name" required>
+    <br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<br>
+
+<table border="1" id="myTable">
+    <tr>
+        <th>Name</th>
+        <th>Gender</th>
+    </tr>
+</table>
+
+<script>
+
+function addData()
+{
+    var name = document.getElementById("name").value;
+
+    var genderList = document.getElementsByName("gender");
+    var gender = "";
+
+    for(var i = 0; i < genderList.length; i++)
+    {
+        if(genderList[i].checked)
+        {
+            gender = genderList[i].value;
+        }
+    }
+
+    var table = document.getElementById("myTable");
+    var row = table.insertRow();
+
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+
+    cell1.innerHTML = name;
+    cell2.innerHTML = gender;
+
+    document.getElementById("name").value = "";
+}
+
+</script>
+
+</body>
+</html>
